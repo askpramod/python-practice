@@ -80,3 +80,23 @@ def reverse(nums):
             s += el
             res.append(s)
     return res
+
+Problem 10: Write a function unique to find all the unique elements of a list.
+def unique(seq):
+    res = []
+    for e in seq:
+        if e not in res:
+            res.append(e)
+    return res
+    
+Problem 11: Write a function dups to find all duplicates in the list.
+Couldn't find...
+
+Problem 12: Write a function group(list, size) that take a list and splits into smaller lists of given size.
+def groups(l, n):
+        res = []
+        for e in range(0, len(l), n):
+            res.append(l[e:e + n])
+        return res
+
+
