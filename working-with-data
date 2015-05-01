@@ -1,0 +1,52 @@
+Lists and Recursions-
+
+Problem 4: Implement a function product, to compute product of a list of numbers.
+
+Solution using loop:
+
+def prodcut(nums):
+  res = 1
+  for num in nums:
+    res *= num
+  return res
+
+
+Solution using recursion:
+
+def product(nums):
+    # If length of list is one,
+    # return the number as there is no multiplication needed
+    if len(nums) is 1:
+        return nums[0]
+    else:
+        # get first and second element of list
+        first, second = nums[0:2]
+        # calculate product of first two numbers
+        el = first*second
+        # genereate new list with elements other than first two
+        x = nums[2:]
+        # Insert the multiply result at first position i.e 0
+        x.insert(0, el)
+        # Recursion call: with new list
+        return product(x)
+        
+Problem 5: Write a function factorial to compute factorial of a number. Can you use the product function defined in the previous example to compute factorial?
+
+with loop---
+
+def fact(num):
+  res = 1
+  while num is not 0:
+    res *= num
+    num -= 1
+  return res
+
+with recursion --
+
+def fact(num):
+    if num is 1:
+    return 1
+  else: 
+    return num * fact(num -1)
+  
+  
