@@ -50,3 +50,33 @@ def fact(num):
     return num * fact(num -1)
   
   
+  Write a function reverse to reverse a list. Can you do this without using list slicing?
+def reverse(nums):
+    res = []
+    for num in nums:
+        res.insert(0, num)
+    return res
+    
+    Problem 8: Cumulative sum of a list [a, b, c, ...] is defined as [a, a+b, a+b+c, ...]. Write a function cumulative_sum to compute cumulative sum of a list. Does your implementation work for a list of strings?
+    for int only - 
+    def cumulative_sum(nums):
+    x = 0
+    res = []
+    for num in nums:
+        x += str(num)
+        res.append(x)
+    return res
+    
+    for int and str - 
+    def cumsum(list):
+    res = []
+    s = 0
+    s1 = ''
+    for el in list:
+        if type(el) is str:
+            s1 += el
+            res.append(s1)
+        else:
+            s += el
+            res.append(s)
+    return res
