@@ -99,4 +99,20 @@ def groups(l, n):
             res.append(l[e:e + n])
         return res
 
+def lensort(list):
+    """a function lensort to sort a list of strings based on length.
+    >>> lensort(['python', 'perl', 'java', 'c', 'haskell', 'lisp', 'ocaml', 'smalltalk', 'ruby'])
+    ['c', 'perl', 'java', 'lisp', 'ruby', 'ocaml', 'python', 'haskell', 'smalltalk']
+    """
+    
+    list.sort(lambda x,y:len(x)-len(y))
+    return list
+    
 
+def extsort(list):
+    """a function extsort to sort a list of files based on extension.
+    >>> extsort(['a.c', 'a.py', 'b.py', 'bar.txt', 'foo.txt', 'x.c'])
+    ['a.c', 'x.c', 'a.py', 'b.py', 'bar.txt', 'foo.txt']
+    """
+    return sorted(list, cmp = lambda x, y: cmp(x.split(".")[1], y.split(".")[1]))
+    
